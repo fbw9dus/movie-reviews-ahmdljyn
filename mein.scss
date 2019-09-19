@@ -1,0 +1,221 @@
+@mixin zeroSize {
+    width: 0;
+    height: 0;
+}
+
+
+
+@mixin stars($color, $size) {
+    .star-five{
+      width: 0px;
+      height: 0px;
+    margin: $size/2 0;
+    position: relative;
+    display: block;
+    color: $color;
+    border-right: $size solid transparent;
+    border-bottom: $size/100*70 solid $color;
+    border-left: $size solid transparent;
+    transform: rotate(35deg);
+    &:before {
+        width: 0px;
+        height: 0px;
+        border-bottom: $size/100*80 solid $color;
+        border-left: $size/100*30 solid transparent;
+        border-right: $size/100*30 solid transparent;
+        position: absolute;
+        top: -$size/100*45;
+        left: -$size/100*65;
+        display: block;
+        content: '';
+        transform: rotate(-35deg);
+    }
+    &:after {
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        display: block;
+        color: $color;
+        top: $size/100*2;
+        left: -$size/100*105;
+        border-right: $size solid transparent;
+        border-bottom: $size/100*70 solid $color;
+        border-left: $size solid transparent;
+        transform: rotate(-70deg);
+        content: '';
+    }
+    }
+}
+ @mixin star-nocolor($color, $size) {
+    .star-five-nocolor{
+      width: 0px;
+      height: 0px;
+    margin: $size/2 0;
+    position: relative;
+    display: block;
+    color: $color;
+    border-right: $size solid transparent;
+    border-bottom: $size/100*70 solid $color;
+    border-left: $size solid transparent;
+    transform: rotate(35deg);
+    &:before {
+        width: 0px;
+        height: 0px;
+        border-bottom: $size/100*80 solid $color;
+        border-left: $size/100*30 solid transparent;
+        border-right: $size/100*30 solid transparent;
+        position: absolute;
+        top: -$size/100*45;
+        left: -$size/100*65;
+        display: block;
+        content: '';
+        transform: rotate(-35deg);
+    }
+    &:after {
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        display: block;
+        color: $color;
+        top: $size/100*2;
+        left: -$size/100*105;
+        border-right: $size solid transparent;
+        border-bottom: $size/100*70 solid $color;
+        border-left: $size solid transparent;
+        transform: rotate(-70deg);
+        content: '';
+    }
+    }
+}
+
+
+ body{
+    margin: 0;
+    padding: 0;
+    background: rgb(184, 181, 181);
+    display: flex;
+    flex-direction: row;
+}
+
+.main{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    font-family: Arial, Helvetica, sans-serif;
+
+   
+}
+
+#bar{
+    width: 350px;
+    height: 150vh;
+    background: rgb(87, 85, 85);
+    overflow: auto;
+    border: 1px solid gray;
+    white-space: space pre;
+}
+
+#main2{
+    width: 1400px;
+    height: 750px;
+    background-image: url('../images/jok.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 30px;
+    box-shadow:20px 20px 10px rgba(0, 0, 0, 0.466); 
+}
+.main3{
+    width: 100%;
+    height: 100%;
+    background: rgba(136, 131, 131, 0.8);
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .stars{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 600px;
+        height: 30px;
+    }
+
+    .text{
+        width: 600px;
+        margin-right: 0px;
+
+        h1{
+            margin: 0;
+            padding: 40px;
+            color: green;
+            text-transform: uppercase;
+            text-shadow:5px 5px 10px black;
+         }
+         
+         
+         p{
+             padding-left: 40px;
+             color: black;
+             text-shadow:5px 5px 10px black;
+             font-size: 20px;
+         }
+    }
+
+    img{
+        height: 400px;
+        width: 300px;
+        margin: 70px;
+        box-shadow:20px 20px 10px rgba(0, 0, 0, 0.466); 
+    }
+   
+   
+    
+}
+
+
+
+.bar1{
+    height: 300px;
+    width: 100%;
+    background: gray;
+    border: 1px solid black;
+    margin: 10px 0px 10px 0px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    h2{
+        
+        padding-top: 5px;
+        margin: 0px;
+        color: black;
+    }
+    p{
+        color: white;
+        padding: 5px 5px 5px 0px; 
+
+    }
+    .stars{
+        padding-left: 0px;
+        width: 250px;
+        display: flex;
+        flex-direction: row;
+        margin-top: 50px;
+    }
+
+    
+
+    &:hover{
+        background: rgb(78, 76, 76);
+    }
+
+
+}
+
+.stars{
+    @include stars(red,20px);
+    display: flex;
+    flex-direction: row;
+    @include star-nocolor(white,20px )
+     
+}
